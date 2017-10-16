@@ -34,6 +34,12 @@ services:
         image: jhipster/jhipster-import-dashboards:v2.2.1
         environment:
             - ELASTICSEARCH_URL=http://jhipster-elasticsearch:9200
+    jhipster-curator:
+        image: jhipster/jhipster-curator:v2.2.1
+        environment:
+            - ES_HOST=jhipster-elasticsearch
+            - UNIT_COUNT=7
+            - UNIT=days
     jhipster-zipkin:
         image: jhipster/jhipster-zipkin:v2.2.1
         ports:

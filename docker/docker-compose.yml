@@ -60,6 +60,12 @@ services:
             service: jhipster-import-dashboards
         depends_on:
             - jhipster-elasticsearch
+    jhipster-curator:
+        extends:
+            file: jhipster-console.yml
+            service: jhipster-curator
+        depends_on:
+            - jhipster-elasticsearch
     jhipster-zipkin:
         extends:
             file: jhipster-console.yml

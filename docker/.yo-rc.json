@@ -9,6 +9,7 @@
     "clusteredDbApps": [],
     "monitoring": "elk",
     "consoleOptions": [
+      "curator",
       "zipkin"
     ],
     "serviceDiscoveryType": "eureka",

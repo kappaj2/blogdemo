@@ -9,7 +9,7 @@
     "jwtSecretKey": "71c0c31d80d59cb9d1fe3edb36becfefd6b4cf2c",
     "dockerRepositoryName": "kappaj",
     "dockerPushCommand": "docker push",
-    "kubernetesNamespace": "default",
+    "kubernetesNamespace": "andrenamespace",
     "kubernetesServiceType": "LoadBalancer"
   }
 }
