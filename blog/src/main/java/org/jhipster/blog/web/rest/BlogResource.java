@@ -88,7 +88,7 @@ public class BlogResource {
     }
 
     /**
-     * GET  /blogs : get all the blogs.
+     * GET  /blogs : get all the blogs for current user.
      *
      * @return the ResponseEntity with status 200 (OK) and the list of blogs in body
      */
@@ -96,7 +96,8 @@ public class BlogResource {
     @Timed
     public List<Blog> getAllBlogs() {
         log.debug("REST request to get all Blogs");
-        return blogRepository.findAll();
+        return blogRepository.findByUserIsCurrentUser();
+        //return blogRepository.findAll();
         }
 
     /**
