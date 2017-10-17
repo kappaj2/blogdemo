@@ -11,9 +11,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.actuate.autoconfigure.*;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.liquibase.LiquibaseProperties;
+import org.springframework.boot.context.embedded.undertow.UndertowBuilderCustomizer;
+import org.springframework.boot.context.embedded.undertow.UndertowEmbeddedServletContainerFactory;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.env.Environment;
 
@@ -89,5 +92,29 @@ public class BlogApp {
         log.info("\n----------------------------------------------------------\n\t" +
                 "Config Server: \t{}\n----------------------------------------------------------",
             configServerStatus == null ? "Not found or not setup for this application" : configServerStatus);
+    }
+    
+    @Bean
+    public Integer port() {
+        return 8080;//SocketUtils.findAvailableTcpPort();
+    }
+    
+    /**
+     * Undertow uses a builder to add extra features.
+     * https://github.com/undertow-io/undertow/blob/master/core/src/main/java/io/undertow/Undertow.java
+     *
+     * @return
+     */
+    @Bean
+    public UndertowEmbeddedServletContainerFactory embeddedServletContainerFactory() {
+        UndertowEmbeddedServletContainerFactory factory = new UndertowEmbeddedServletContainerFactory();
+        factory.addBuilderCustomizers(new UndertowBuilderCustomizer() {
+            @Override
+            public void customize(io.undertow.Undertow.Builder builder) {
+                builder.addHttpListener(8080, "0.0.0.0");
+            }
+            
+        });
+        return factory;
     }
 }
