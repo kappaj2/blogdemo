@@ -1,0 +1,15 @@
+{
+  "generator-jhipster": {
+    "appsFolders": [
+      "blog",
+      "store"
+    ],
+    "directoryPath": "../",
+    "serviceDiscoveryType": "eureka",
+    "jwtSecretKey": "2b3bd462d753648de291a2b151becdd506b3fb85",
+    "dockerRepositoryName": "kappaj",
+    "dockerPushCommand": "docker push",
+    "kubernetesNamespace": "default",
+    "kubernetesServiceType": "LoadBalancer"
+  }
+}
