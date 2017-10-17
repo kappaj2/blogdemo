@@ -3,7 +3,7 @@
 <configuration scan="true">
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
 
-    <logger name="za.co.ajk.blog" level="INFO"/>
+    <logger name="org.jhipster.blog" level="INFO"/>
 
     <logger name="io.github.jhipster" level="WARN"/>
 

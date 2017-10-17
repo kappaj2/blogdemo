@@ -1,14 +1,13 @@
 {
   "generator-jhipster": {
     "promptValues": {
-      "packageName": "za.co.ajk.blog",
-      "nativeLanguage": "en",
-      "microservicePath": "../store"
+      "packageName": "org.jhipster.blog",
+      "nativeLanguage": "en"
     },
     "jhipsterVersion": "4.9.0",
     "baseName": "blog",
-    "packageName": "za.co.ajk.blog",
-    "packageFolder": "za/co/ajk/blog",
+    "packageName": "org.jhipster.blog",
+    "packageFolder": "org/jhipster/blog",
     "serverPort": "8080",
     "authenticationType": "jwt",
     "hibernateCache": "hazelcast",
@@ -22,8 +21,7 @@
     "serviceDiscoveryType": "eureka",
     "buildTool": "maven",
     "enableSocialSignIn": false,
-    "enableSwaggerCodegen": false,
-    "jwtSecretKey": "5d61d2d8d1e9d3dfd05df0c90427ed23f75aca53",
+    "jwtSecretKey": "055aa488cbab06a1467646ba68b2baf7f88cc2ca",
     "clientFramework": "angularX",
     "useSass": true,
     "clientPackageManager": "yarn",
