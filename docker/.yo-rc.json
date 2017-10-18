@@ -7,7 +7,7 @@
     "directoryPath": "../",
     "gatewayType": "zuul",
     "clusteredDbApps": [],
-    "monitoring": "elk",
+    "monitoring": "no",
     "consoleOptions": [
       "zipkin"
     ],

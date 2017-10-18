@@ -16,7 +16,6 @@ $ docker push kappaj/store
 You can deploy your apps by running:
 
 ```
-$ kubectl apply -f console
 $ kubectl apply -f registry
 
 $ kubectl apply -f blog
@@ -49,17 +48,6 @@ $ kubectl set image deployment/<app-name>-app <app-name>=<new-image>
 ```
 
 Using livenessProbes and readinessProbe allows you to tell kubernetes about the state of your apps, in order to ensure availablity of your services. You will need minimum 2 replicas for every app deployment, you want to have zero-downtime deployed. This is because the rolling upgrade strategy first kills a running replica in order to place a new. Running only one replica, will cause a short downtime during upgrades.
-
-## Monitoring tools
-
-### JHipster console
-
-Your application logs can be found in JHipster console (powered by Kibana). You can find its service details by
-```
-$ kubectl get svc jhipster-console
-```
-
-Point your browser to an IP of any of your nodes and use the node port described in the output.
 
 ## JHipster registry
 
