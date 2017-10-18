@@ -99,7 +99,7 @@ liquibase:
 server:
     port: 8443
     ssl:
-        key-store: mykeystore.p12
+        key-store: classpath:mykeystore.p12
         key-store-password: HelpMyBob12@
         keyStoreType: PKCS12
         keyAlias: springboot

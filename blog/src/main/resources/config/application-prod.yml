@@ -83,7 +83,12 @@ liquibase:
 #        keyAlias: blog
 # ===================================================================
 server:
-    port: 8080
+    port: 8443
+    ssl:
+        key-store: classpath:mykeystore.p12
+        key-store-password: HelpMyBob12@
+        keyStoreType: PKCS12
+        keyAlias: springboot
     compression:
         enabled: true
         mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
