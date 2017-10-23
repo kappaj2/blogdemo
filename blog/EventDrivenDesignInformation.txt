@@ -1,0 +1,50 @@
+# Overall Event driven design
+https://www.youtube.com/watch?v=A0goyZ9F4bg
+
+# Spring Cloud Stream
+https://www.youtube.com/watch?v=_oV2dia0fy4
+
+# rabbitMQ and REST
+https://www.youtube.com/watch?v=MZIPf9OipmE&t=3s
+
+https://spring.io/blog/2015/03/08/getting-started-with-activiti-and-spring-boot
+https://github.com/joshlong/Activiti
+
+
+http://microservices.io/microservices/news/2017/08/01/data-patterns-presentation.html
+https://github.com/joshlong/spring-doge-microservice-configuration
+https://github.com/joshlong/spring-doge-microservice
+
+
+Josh Long Reservation Service show implementation
+
+# Spring Cloud Dataflow
+https://www.youtube.com/watch?v=_oV2dia0fy4
+
+https://github.com/spring-cloud?page=2
+http://projects.spring.io/spring-cloud/#quick-start
+
+
+// binding env properties into Java properties
+@ConfigurationProperties
+public class TimeSourceProperties{
+
+  private String format = "yyyy-MM-dd HH:mm:ss";
+
+  @DateFormat
+  public String getFormat(){
+  	return this.format;
+  }
+
+  public void setFormat(String format){
+  	this.format = format;
+  }
+}
+
+Now use this class
+
+@EnableBinding(Source.class) // bind to queue source
+@EnableConfigurationProperties(TimeSourceProperties.class)
+public class TimeSources{
+
+}

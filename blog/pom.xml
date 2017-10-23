@@ -16,6 +16,7 @@
     <name>Blog</name>
 
     <properties>
+        <cloud.datastore.version>0.2.5</cloud.datastore.version>
         <argLine>-Djava.security.egd=file:/dev/./urandom -Xmx256m</argLine>
         <assertj.version>3.6.2</assertj.version>
         <awaitility.version>2.0.0</awaitility.version>
@@ -110,6 +111,20 @@
     </dependencyManagement>
 
     <dependencies>
+
+        <!--    Google Datastore required 20.0 and Swagger brings in 18.0 - causes validation problems  -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>20.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.cloud</groupId>
+            <artifactId>google-cloud-datastore</artifactId>
+            <version>1.8.0</version>
+        </dependency>
+
         <dependency>
             <groupId>io.github.jhipster</groupId>
             <artifactId>jhipster</artifactId>
@@ -200,6 +215,10 @@
                 <exclusion>
                     <groupId>org.mapstruct</groupId>
                     <artifactId>mapstruct</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -443,6 +462,10 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-data</artifactId>
         </dependency>
+
+
+
+
         <!-- jhipster-needle-maven-add-dependency -->
     </dependencies>
     <build>

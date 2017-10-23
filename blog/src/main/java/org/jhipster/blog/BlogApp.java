@@ -3,6 +3,8 @@ package org.jhipster.blog;
 import org.jhipster.blog.config.ApplicationProperties;
 import org.jhipster.blog.config.DefaultProfileUtil;
 
+import com.google.cloud.datastore.Datastore;
+import com.google.cloud.datastore.DatastoreOptions;
 import io.github.jhipster.config.JHipsterConstants;
 
 import org.slf4j.Logger;
@@ -117,4 +119,10 @@ public class BlogApp {
         });
         return factory;
     }
+    
+    @Bean
+    public Datastore cloudDatastoreService() {
+        return DatastoreOptions.getDefaultInstance().getService();
+    }
+    
 }
